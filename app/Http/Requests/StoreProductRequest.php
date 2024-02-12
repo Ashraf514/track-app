@@ -27,6 +27,9 @@ class StoreProductRequest extends FormRequest
             'brand'=>["required"],
             'description'=>["required","max:200"],
             'price'=>["required","numeric","gt:0"],
+            'product_key_info'=>["required","array","min:1"],
+            'product_key_info.*.title'=>["required","string","max:100"],
+            'product_key_info.*.description'=>["required","string","max:300"],
         ];
     }
 }
